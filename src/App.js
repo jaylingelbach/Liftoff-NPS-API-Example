@@ -1,5 +1,5 @@
 import './App.css';
-import ParkList from './components/park';
+import ParkList from './components/ParkList';
 
 function App() {
   return (

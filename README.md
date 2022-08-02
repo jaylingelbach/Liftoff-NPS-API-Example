@@ -1,3 +1,45 @@
+# Liftoff group!
+
+Fork this repo, clone it, play with it.
+It has one component that really doesn't do anything but console log the result
+of a call to the API.
+I installed axios to make http requests easier.
+I'd like for you to do a few simple things.
+
+- Take a look at ParkList.js
+
+```
+  componentDidMount() {
+    axios
+      .get(
+        `https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=YOUR_KEY_HERE`
+      )
+      .then((res) => {
+        const parks = res.data;
+        console.log(parks);
+      });
+  }
+```
+
+GLOSS OVER `componentDidMount()`, but checkout `axios.get()` the link was
+given at the time that I made a request for access to the NPS API. They should
+have sent an email with your api_key. We will be replacing this shortly with
+ENV Variables. I'll cover this in small group time. You can replace YOUR_KEY_HERE
+with the key they sent to you after signup. No quotes or anything.
+
+`.then((res) => {...function stuff here })` is something else we will talk about, but for now just think
+of it as a pause until the server has time to respond.
+
+The next line sets the response from the server to a constant and then we log it.
+
+- What I want you to do is to make some more console.logs. Just add them under the
+  existing log.
+  I'd like you to log:
+
+1. `weatherInfo`
+2. Operating hours description text (Acadia National Park is open year-round. Check our website for park facilities operating hours, such as Hulls Cove Visitor Center.)
+3. The `cost` of "Admits one or two passengers on a private, non-commercial motorcycle. Valid for 7 days." (should be 25.00)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
